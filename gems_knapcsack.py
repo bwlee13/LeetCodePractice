@@ -10,6 +10,7 @@ while weight, decriment from quant with highest price and add price to value eve
 
 """
 
+
 def max_val_knap(q, p, w):
     matrix = list(zip(p, q))
     matrix.sort(reverse=True)
@@ -23,9 +24,6 @@ def max_val_knap(q, p, w):
 
     print(value)
     return value
-
-
-
 
 
 q = [5,5,1,7]

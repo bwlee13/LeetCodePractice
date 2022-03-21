@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def perform(query):
     queue = deque([])
     out = []

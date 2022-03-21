@@ -6,6 +6,7 @@ sum up to target amount with fewest posisble coins"""
 """ ex1: coins = [1,2,5] , amount = 11, output: 3
     ex2: coins = [2], amount = 3 , output: -1 (cant)"""
 
+
 def coinChange(coins, amount):
     dp = [amount+1] * (amount+1)
     dp[0] = 0
@@ -22,13 +23,6 @@ def coinChange(coins, amount):
 # print(coinChange(c, a))
 
 
-
-
-
-
-
-
-
 """
 write a function that returns the max value after filling a knapsack with n gems. The knapsack can hold weight w, and the two inputs
 are quantity q and prices p of the gems found. You can use partial gems in q and not have to take the entire q[i]
@@ -40,6 +34,7 @@ zip to matrix, sort reversed
 while weight, decriment from quant with highest price and add price to value every time
 
 """
+
 
 def max_val_knap(q, p, w):
     matrix = list(zip(p, q))
@@ -56,16 +51,10 @@ def max_val_knap(q, p, w):
     return value
 
 
-
-
-
 q = [5,5,1,7]
 p = [1,2,10,1]
 w = 3
 max_val_knap(q, p, w)
-
-
-
 
 
 """
@@ -73,6 +62,7 @@ provided with a temp record temperatureRecord(temp, time)
 return maximum temp in last 24 hours
 ex: input= [(24,0), (14,8), (21,16), (20,25)] output= [24, 24, 24, 21]
 """
+
 
 def daily_max_temp(temp_record):
     queue = deque()

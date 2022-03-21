@@ -8,13 +8,30 @@ Linked List
 
 
 class Node:
-    def __init__(self, data=None, next=None):
+    def __init__(self, data=None, next=None): #add self, value, data=None...
+        # self.value = value
         self.data = data
         self.next = next
+
 
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.tail = None
+
+    def __iter__(self):
+        node = self.head
+        while node:
+            yield node
+            node = node.next
+
+    #only use when you add self.value back to Node
+    def add(self, node):
+        if self.head:
+            self.tail.next = node
+        else:
+            self.head = node
+        self.tail = node
 
     def insert_at_beginning(self, data):
         node = Node(data, self.head)
@@ -100,20 +117,25 @@ class LinkedList:
 
 
 if __name__ == '__main__':
+    ll = LinkedList()
+    ll.insert_at_beginning(5)
+    ll.insert_at_beginning(89)
+    ll.insert_at_end(75)
+    ll.insert([1,2,3,4,5,6])
+    ll.print()
+    ll.remove_at(3)
+    ll.insert_at(6, "fig")
+    ll.print()
+
+    # lis = []
+    # lis.insert(0, 5)
+    # lis.insert(0,10)
+    # print(lis)
+    # lis.append(6)
+    # print(lis)
+
     # ll = LinkedList()
-    # ll.insert_at_beginning(5)
-    # ll.insert_at_beginning(89)
-    # ll.insert_at_end(75)
-    # ll.insert([1,2,3,4,5,6])
-    # ll.print()
-    # ll.remove_at(3)
-    # ll.insert_at(6, "fig")
-    # ll.print()
-
-
-    lis = []
-    lis.insert(0, 5)
-    lis.insert(0,10)
-    print(lis)
-    lis.append(6)
-    print(lis)
+    # ll.add(Node('hey'))
+    # ll.add(Node('there'))
+    # ll.add(Node('Brendo'))
+    # print([node.value for node in ll])
