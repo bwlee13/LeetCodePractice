@@ -1,8 +1,8 @@
 class Node:
-    def __init__(self, data):
+    def __init__(self, value):
+        self.value = value
         self.left = None
         self.right = None
-        self.data = data
 
 
 preorder = []
@@ -10,7 +10,7 @@ preorder = []
 
 def pre(root):
     if root:
-        preorder.append(root.data)
+        preorder.append(root.value)
         pre(root.left)
         pre(root.right)
 
@@ -21,7 +21,7 @@ inorder = []
 def inord(root):
     if root:
         inord(root.left)
-        inorder.append(root.data)
+        inorder.append(root.value)
         inord(root.right)
 
 
@@ -32,7 +32,7 @@ def post(root):
     if root:
         post(root.left)
         post(root.right)
-        postorder.append(root.data)
+        postorder.append(root.value)
 
 
 if __name__ == '__main__':
@@ -44,7 +44,8 @@ if __name__ == '__main__':
     # parent = Node(34)
     # parent.left = Node(45)
     # parent.right = Node(50)
-    # root = Node(parent)
+    # root = Node(10)
+    # root.left = Node(parent.value)
     # root.right = Node(89)
 
     pre(root)

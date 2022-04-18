@@ -1,6 +1,7 @@
 from collections import deque
 from queue import PriorityQueue
 
+
 def findMaximumSustainableClusterSize(processingPower, bootingPower, powerMax):
     queue = deque([])
     # queue= PriorityQueue()
@@ -28,6 +29,7 @@ def findMaximumSustainableClusterSize(processingPower, bootingPower, powerMax):
             queue.append(bootingPower[end])
             currSumProc += processingPower[end]
     return maxLength
+
 
 processingPower = [2,1,4,6,1]
 bootingPower = [9,14,8,15,15]
